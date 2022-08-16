@@ -1,0 +1,209 @@
+* {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+body {
+    height: 100vh;
+}
+
+/* .container, */
+.phone-hidden,
+.phone-show-menu,
+.from,
+.vip,
+.left-header,
+.right-header,
+.header,
+.author,
+.slide {
+    display: flex;
+}
+
+
+.header {
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.header .container {
+    width: 90%;
+    /* background-color: #1e80ff; */
+}
+
+.header .container .left-header {
+    width: 51.5%;
+    float: left;
+}
+
+.header .container .left-header .left-logo {
+    line-height: 60px;
+}
+
+.header .container .left-header .left-logo .logo-img {
+    width: 106.99px;
+    height: 22px;
+}
+
+.header .container .left-header .left-logo .mobile {
+    display: none;
+}
+
+.header .container .left-header .menu {
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.header .container .left-header .menu .phone-show-menu {
+    position: relative;
+    line-height: 60px;
+    display: none;
+}
+
+.header .container .left-header .menu .phone-show-menu .triangle {
+    position: absolute;
+    top: 28px;
+    left: 35px;
+    width: 0px;
+    height: 0px;
+    border: 5px black solid;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.header .container .left-header .menu .phone-hidden {
+    line-height: 50px;
+}
+
+.header .container .left-header .menu .phone-hidden li {
+    list-style: none;
+    margin-right: 23px;
+}
+
+.header .container .left-header .menu .phone-hidden li:hover:nth-child(-n+5) {
+    border-bottom: 3px solid #1e80ff;
+}
+
+.header .container .left-header .menu .phone-hidden li a {
+    text-decoration: none;
+    color: black;
+}
+
+.header .container .left-header .menu .phone-hidden li a:hover {
+    color: #505767;
+}
+
+.header .container .right-header {
+    float: left;
+    width: 48.5%;
+    height: 60px;
+}
+
+.header .container .right-header .slide {
+    width: 1500px;
+    overflow: hidden;
+}
+
+.header .container .right-header .right-input {
+    height: 60px;
+}
+
+.header .container .right-header .right-input .from {
+    position: relative;
+    margin-right: 20px;
+}
+
+.header .container .right-header .right-input .from .search-input {
+    padding-left: 10px;
+    opacity: 0.5;
+    font-size: 13px;
+    margin-top: 10px;
+    width: 360px;
+    height: 30px;
+    transition: 0.5s width;
+}
+
+.header .container .right-header .right-input .from .search-icon-container {
+    position: absolute;
+    left: 340px;
+    top: 18px;
+    transition: 0.5s left;
+}
+
+.header .container .right-header .creator-item .author {
+    line-height: 35px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 3px;
+    color: aliceblue;
+}
+
+.header .container .right-header .creator-item .author .heade {
+    height: 35px;
+    width: 100px;
+    background-color: #0085ff;
+    margin-right: 1px;
+    font-size: 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.header .container .right-header .creator-item .author .mine {
+    line-height: 35px;
+    height: 35px;
+    width: 18px;
+    color: aliceblue;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #0085ff;
+}
+
+.header .container .right-header .creator-item .more-list {
+    display: none;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+.header .container .right-header .creator-item .more-list li {
+    margin-top: 13px;
+    font-weight: 10;
+}
+
+.header .container .right-header .creator-item .more-list i {
+    margin-right: 20px;
+    color: rgb(116, 118, 121);
+}
+
+.header .container .right-header .vip {
+    height: 60px;
+    line-height: 60px;
+    margin-left: 20px;
+    width: 200px;
+    color: #505767;
+    font-size: 14px;
+}
+
+.header .container .right-header .vip img {
+    width: 25px;
+    margin-right: 4px;
+}
+
+.header .container .right-header .register {
+    line-height: 53px;
+    margin-left: 10px;
+    margin-right: 2px;
+}
+
+.header .container .right-header .register button {
+    width: 55px;
+    height: 38px;
+    background-color: #e3f0f6;
+    border: 1px solid #7dd4ff;
+    color: #0085ff;
+    border-radius: 3px;
+}
