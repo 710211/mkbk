@@ -40,6 +40,7 @@ export default class Tailer extends Component {
   }
   disappear = (event) => {
     event.target.parentNode.style.display = 'none'
+    event.stopPropagation()
   }
   jump = (event) => {
       // window.location.href = event
