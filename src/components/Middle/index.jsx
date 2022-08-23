@@ -18,9 +18,6 @@ export default class Middle extends Component {
                             <li><a href="#">阅读</a></li>
                         </ul>
                     </div>
-                    <div className="midldle-right">
-                        <span><a href="">标签管理</a></span>
-                    </div>
                 </div>
             </div>
         )
