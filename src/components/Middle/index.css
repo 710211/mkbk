@@ -4,13 +4,13 @@
     display: flex;
 }
 
-a {
+.middle .middle-container .middle-left ul li a {
     text-decoration: none;
     color: gray;
     font-size: 14.5px;
 }
 
-a:hover {
+.middle .middle-container .middle-left ul li a:hover {
     color: #0085ff;
 }
 
@@ -21,7 +21,6 @@ a:hover {
     background-color: #ffffff;
     overflow: hidden;
     margin-top: 1px;
-    z-index: 2;
 }
 
 .middle .middle-container {
@@ -32,6 +31,8 @@ a:hover {
 
 .middle .middle-container .middle-left ul li {
     list-style: none;
-    margin-right: 24px;
-    color: gray;
+    margin-right: 20px;
+}
+.middle .middle-container .middle-left ul li:nth-child(1) a{
+    color: #0085ff;
 }
