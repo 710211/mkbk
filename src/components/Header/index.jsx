@@ -3,6 +3,7 @@ import './index.css'
 import '../icon/css/all.css'
 import '../icon/旧版/css/font-awesome.min.css'
 let n = 180
+let f = true
 export default class Header extends Component {
     more_list = (event) => {
         event.target.style.transform = 'rotate(' + n + 'deg)';
@@ -10,6 +11,7 @@ export default class Header extends Component {
         if (display != 'block') this.more_l.style.display = 'block'
         else this.more_l.style.display = 'none'
         n += 180
+        f = false
     }
     input_down = (event) => {
         event.target.style.width = '400px'
@@ -23,21 +25,28 @@ export default class Header extends Component {
         this.icon.style.left = '240px'
         this.author.style.display = 'block'
     }
-    hidden = () => {
-        if (document.body.offsetWidth <= 1200) {
-            this.phone_menu.style.display = 'block'
-            this.phone_hidden.style.display = 'none'
-        } else {
-            this.phone_menu.style.display = 'none'
-            this.phone_hidden.style.display = 'flex'
-        }
-    }
     componentDidMount() {
-        this.hidden()
-        var _this = this
-        window.addEventListener('resize', function () {
-            _this.hidden()
+        window.addEventListener('click', () => {
+            if (f) {
+                let display = this.more_l.style.display
+                if (display === 'block') {
+                    this.more_l.style.display = 'none'
+                    this.mine.style.transform = 'rotate(' + n + 'deg)';
+                    n += 180
+                }
+            }
+            if (t) {
+                let display_1 = this.phone_hidden.style.display
+                if (display_1 === 'block') {
+                    this.phone_hidden.style.display = 'none'
+                }
+            }
+            f = true
+            t = true
         })
+    }
+    appear = ()=>{
+
     }
     render() {
         return (
@@ -53,7 +62,7 @@ export default class Header extends Component {
                             </a>
                         </div>
                         <div className="menu">
-                            <div className="phone-show-menu" ref={refs => this.phone_menu = refs}>
+                            <div className="phone-show-menu" onClick={this.appear}>
                                 <span>首页</span>
                                 <div className="triangle"></div>
                             </div>
@@ -64,8 +73,8 @@ export default class Header extends Component {
                                 <li><a href="">直播</a></li>
                                 <li><a href="">活动</a></li>
                                 <li>商城</li>
-                                <li>App</li>
-                                <li>插件</li>
+                                <li className="disappear_1">App</li>
+                                <li className="disappear_1">插件</li>
                             </ul>
                         </div>
                     </div>
@@ -82,25 +91,25 @@ export default class Header extends Component {
                             </div>
                             <div className="creator-item" ref={refs => this.author = refs}>
                                 <div className="author">
-                                    <span className="heade">创作者中心</span>
-                                    <div className="mine"><i className="fa fa-caret-down" aria-hidden="true" onClick={this.more_list}></i></div>
+                                    <span className="text">创作者中心</span>
+                                    <div className="mine"><i ref={refs => this.mine = refs} className="fa fa-caret-down" aria-hidden="true" onClick={this.more_list}></i></div>
                                 </div>
-                                <ul className="more-list" ref={refs => this.more_l = refs}>
-                                    <li className="item">
-                                        <i className="fa fa-pencil" aria-hidden="true"></i>
-                                        <span>写文章</span>
-                                    </li>
-                                    <li className="item">
-                                        <i className="fa fa-smile-o" aria-hidden="true"></i>
-                                        <span>发沸点</span>
-                                    </li>
-                                    <li className="item">
-                                        <i className="fa fa-download" aria-hidden="true"></i>
-                                        <span>写代码</span>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
+                        <ul className="more-list" ref={refs => this.more_l = refs}>
+                            <li className="item">
+                                <i className="fa fa-pencil" aria-hidden="true"></i>
+                                <span>写文章</span>
+                            </li>
+                            <li className="item">
+                                <i className="fa fa-smile-o" aria-hidden="true"></i>
+                                <span>发沸点</span>
+                            </li>
+                            <li className="item">
+                                <i className="fa fa-download" aria-hidden="true"></i>
+                                <span>写代码</span>
+                            </li>
+                        </ul>
                         <div className="vip">
                             <img src="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/24127194d5b158d7eaf8f09a256c5d01.svg"
                                 alt="vip" />
